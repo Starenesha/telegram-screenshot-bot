@@ -19,7 +19,6 @@ def answer_messages(message):
     try:
         img = imgkit.from_url(url, f'screens/{filename}.jpg')
 
-        open(img, 'rb') as file:
         with open(img, 'rb') as file:
             bot.send_photo(message.chat.id, file, caption='Your screenshot:', reply_to_message_id=message.message_id)
             task.wait()
